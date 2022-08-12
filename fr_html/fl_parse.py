@@ -67,7 +67,7 @@ def fl_parse_work_det(data, work_list, how_many_days, birza):
             time_pub = re.findall("\d{2}:\d{2}", date_pub)[1]
             # При попадании заказа в диапазон - добавляем заказ в список work_list
             if kvo_dney(yyyymmdd(date_pub1)) < how_many_days:
-                work_dict = {"Фриланс-Биржа" : birza, "Тема" : tema, "Тех. задание" : tz,
+                work_dict = {"Фриланс-Биржа" : birza.upper(), "Тема" : tema, "Тех. задание" : tz,
                             "Оплата" : oplata, "Срок" : srok, "Заказчик: +отзывы": zak_plus_otz,
                             "Заказчик: -отзывы": zak_minus_otz, "Заказчик: на рынке" : zak_na_rinke, "Дата и время публикации" : f"{date_pub1} {time_pub}"}
                 work_list.append(work_dict)
