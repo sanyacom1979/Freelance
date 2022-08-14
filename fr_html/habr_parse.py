@@ -6,7 +6,7 @@ import time
 
 from fr_html.fr_reqv import reqv
 from file_func.f_txt import to_tmp_txt
-from date_time.date_time import yyyymmdd, kvo_dney,conv_month_num
+from date_time.date_time import kvo_dney, conv_month_num
 from tqdm import tqdm
 
 
@@ -61,7 +61,7 @@ def habr_parse_work_det(data, work_list, how_many_days, birza):
         date_pub1 = f"{date_pub1[:2]}.{conv_month_num(date_pub1[3:-5].lower())}.{date_pub1[-4:]}"
         time_pub = re.findall("\d{2}:\d{2}", date_pub)[0]
         # При попадании заказа в диапазон - добавляем заказ в список work_list
-        if kvo_dney(yyyymmdd(date_pub1)) < how_many_days:
+        if kvo_dney(date_pub1) < how_many_days:
             work_dict = {"Фриланс-Биржа": birza.upper(), "Тема": tema, "Тех. задание": tz,
                          "Оплата": oplata, "Срок": srok, "Заказчик: +отзывы": zak_plus_otz,
                          "Заказчик: -отзывы": zak_minus_otz, "Заказчик: на рынке": zak_na_rinke,
