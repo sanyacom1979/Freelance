@@ -16,7 +16,7 @@ del_file(f_excel)
 
 how_many_days = int(input("За сколько дней собирать?"))
 
-fr_dict = {"fl.ru" : ("https://www.fl.ru/projects/category/programmirovanie/?page={i}&kind=5", fl_parse_work, fl_parse_work_det),
+fr_dict = {"fl" : ("https://www.fl.ru/projects/category/programmirovanie/?page={i}&kind=5", fl_parse_work, fl_parse_work_det),
            "weblancer" : ("https://www.weblancer.net/jobs/veb-programmirovanie-31/?page={i}", webl_parse_work, webl_parse_work_det),
            "freelance.habr" : ("https://freelance.habr.com/tasks?_=1660285596370&categories="
                                     "development_all_inclusive%2Cdevelopment_backend%2Cdevelopment_"
