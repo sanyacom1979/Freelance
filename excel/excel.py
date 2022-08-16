@@ -35,5 +35,5 @@ def to_excel(w_list, f_excel):
         ws.append(list(l_item.values()))
     book_col_width(d_len, ws)
     book_styles(l_len, d_len, ws)
-    wb.save("excel/results.xlsx")
+    wb.save(f_excel)
     print(f"Результаты сохранены в файл {f_excel}.")
